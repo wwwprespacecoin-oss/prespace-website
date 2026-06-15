@@ -1,0 +1,321 @@
+/* ══════════════════════════════════════
+   auth.css — Login & Register pages
+   ══════════════════════════════════════ */
+
+body.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #060810;
+}
+
+/* ── Blurred hero background ── */
+.auth-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    url("../Assets/images/hero-image.png") center/cover no-repeat;
+  filter: blur(6px) brightness(0.25);
+  z-index: 0;
+}
+
+/* ── Navbar override for auth pages ── */
+body.auth-page .navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  z-index: 100;
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: 16px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.auth-page .logo {
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* ── Auth wrapper — centers card ── */
+.auth-wrapper {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 40px;
+}
+
+/* ── Card ── */
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 24px;
+  padding: 42px 40px 36px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px rgba(0,0,0,.5);
+}
+
+/* ── Card header ── */
+.auth-card-header {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.auth-card-header h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.auth-card-header p {
+  font-size: 15px;
+  color: rgba(255,255,255,.5);
+}
+
+/* ── Form ── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.65);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.input-group input {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 15px;
+  color: white;
+  outline: none;
+  transition: border-color .25s, background .25s;
+  width: 100%;
+}
+
+.input-group input::placeholder {
+  color: rgba(255,255,255,.28);
+}
+
+.input-group input:focus {
+  border-color: #2979ff;
+  background: rgba(41,121,255,.08);
+}
+
+/* ── Password toggle ── */
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  padding-right: 64px;
+}
+
+.toggle-pw {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.45);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color .2s;
+}
+
+.toggle-pw:hover { color: #2979ff; }
+
+/* ── Password strength ── */
+.strength-bar {
+  height: 4px;
+  background: rgba(255,255,255,.1);
+  border-radius: 4px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 4px;
+  transition: width .4s, background .4s;
+}
+
+.strength-label {
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+  margin-top: 3px;
+}
+
+/* ── Form meta (remember + forgot) ── */
+.form-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  accent-color: #2979ff;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.checkbox-label.terms {
+  font-size: 13px;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
+.checkbox-label.terms a {
+  color: #2979ff;
+  text-decoration: none;
+}
+
+.checkbox-label.terms a:hover { text-decoration: underline; }
+
+.forgot-link {
+  font-size: 14px;
+  color: #2979ff;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+
+.forgot-link:hover { opacity: .75; }
+
+/* ── Primary button ── */
+.btn-form-primary {
+  width: 100%;
+  padding: 15px;
+  background: #2979ff;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .25s, transform .15s;
+  margin-top: 4px;
+}
+
+.btn-form-primary:hover  { background: #1a5fd6; }
+.btn-form-primary:active { transform: scale(.98); }
+.btn-form-primary:focus-visible { outline: 2px solid white; }
+
+/* ── Divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,.25);
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,.1);
+}
+
+/* ── Google button ── */
+.btn-google {
+  width: 100%;
+  padding: 13px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background .25s, border-color .25s;
+}
+
+.btn-google:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.22);
+}
+
+/* ── Switch link ── */
+.auth-switch {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+  color: rgba(255,255,255,.45);
+}
+
+.auth-switch a {
+  color: #2979ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-switch a:hover { text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .auth-card {
+    padding: 32px 22px 28px;
+    border-radius: 18px;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+
+  body.auth-page .navbar {
+    padding: 14px 18px;
+    width: calc(100% - 28px);
+    border-radius: 14px;
+  }
+}
