@@ -1,0 +1,128 @@
+/* ══════════════════════════════════════
+   responsive.css — PreSpace-Skill
+   Breakpoints: 1200px | 900px | 600px | 400px
+   ══════════════════════════════════════ */
+
+/* ── LARGE DESKTOP (≤ 1200px) ── */
+
+@media (max-width: 1200px) {
+
+  .hero {
+    padding: 0 60px;
+  }
+
+  nav ul {
+    gap: 28px;
+  }
+
+}
+
+/* ── TABLET / SMALL LAPTOP (≤ 900px) ── */
+
+@media (max-width: 900px) {
+
+  /* Hide desktop nav & auth, show hamburger */
+  .navbar nav,
+  .navbar .auth-buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 16px 24px;
+    top: 14px;
+  }
+
+  .hero {
+    padding: 0 40px;
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding-top: 110px;
+  }
+
+}
+
+/* ── MOBILE (≤ 600px) ── */
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 0 24px;
+    min-height: 100svh;
+    /* Push content a bit lower so it clears the navbar comfortably */
+    padding-top: 90px;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    width: calc(100% - 32px);
+    top: 12px;
+    padding: 14px 18px;
+    border-radius: 14px;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  .hero-content {
+    padding-top: 0;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(38px, 11vw, 56px);
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    margin-top: 18px;
+  }
+
+  .buttons {
+    margin-top: 30px;
+    gap: 14px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  .mobile-nav a {
+    font-size: 20px;
+  }
+
+}
+
+/* ── SMALL MOBILE (≤ 400px) ── */
+
+@media (max-width: 400px) {
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+}
